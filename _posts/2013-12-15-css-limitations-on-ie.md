@@ -9,7 +9,7 @@ If you search for CSS limitations on IE, you will see sites where they state tha
 - All style tags after the first 31 style tags are not applied.
 - On pages that uses the `@import` rule to continously import external style sheets that import other style sheets, style sheets that are more than three levels deep are ignored.
 
-A live demo for the first one can be found <a href="http://demos.telerik.com/testcases/4095issues.html">here</a>.
+Here is a [live demo for the first case](http://demos.telerik.com/testcases/4095issues.html).
 
 IE 10 has limitations of the same nature but it'd take a lot more effort to reach them:
 
