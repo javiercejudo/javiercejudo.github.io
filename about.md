@@ -11,5 +11,6 @@ Before, I worked at JIG developing web applications in PHP and Javascript, and a
 
 ## Contact me
 
-[javier@javiercejudo.com](mailto:javier@javiercejudo.com)
-[(+61) 432 429 789](tel:+61432429789)
+Email: [javier@javiercejudo.com](mailto:javier@javiercejudo.com)
+
+Phone: [(+61) 432 429 789](tel:+61432429789)
