@@ -19,9 +19,9 @@ IE 10 has limitations of the same nature but it'd take a lot more effort to reac
 
 If you think you might having issues due to the 4,095 constraint, you can take your CSS and roughly count the number of selectors following the following formula,
 
-```
+{% highlight %}
 Selectors = Braces + Commas
-```
+{% endhighlight %}
 
 where `Braces` is the number of braces (`{`), and `Commas` is the number of commas (`,`). The formula is an approximation because there are commas inside some CSS rules.
 
