@@ -250,7 +250,7 @@ nav {
 
 .post { 
   .entry {
-    &> p, &> ul > li {
+    &> p, &> ul > li, .gist {
       font-size: 16px;
     }
   }
