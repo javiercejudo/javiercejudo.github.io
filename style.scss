@@ -249,8 +249,9 @@ nav {
 }
 
 .post { 
-  p {
-    font-size: 15px;
+  .entry {
+    &> p, &> li {
+    font-size: 16px;
   }
 
   blockquote {
