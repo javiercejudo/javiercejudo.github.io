@@ -149,11 +149,12 @@ img {
 
 .wrapper-masthead {
   margin-bottom: 50px;
+  border-bottom: 1px solid #ddd;
+  background-color: $lightGray;
 }
 
 .masthead {
   padding: 20px 0;
-  border-bottom: 1px solid $lightGray;
 
   @include mobile {
     text-align: center;
@@ -276,7 +277,6 @@ nav {
 .wrapper-footer {
   margin-top: 50px;
   border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
   background-color: $lightGray;
 }
 
