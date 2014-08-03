@@ -4,14 +4,15 @@ layout: default
 
 <div class="posts">
   {% for post in site.posts %}
-    <article class="post">    
-      
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+    <article class="post">
 
-      <div class="entry">
-        {{ post.content }}
-      </div>
-      
+      <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+
+      {% if post.summary %}
+        <div class="entry">
+          {{ post.summary }}
+        </div>
+      {% endif %}
     </article>
   {% endfor %}
 </div>
