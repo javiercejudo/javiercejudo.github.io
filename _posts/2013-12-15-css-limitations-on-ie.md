@@ -1,7 +1,7 @@
 ---
 layout: post
 title: CSS limitations on IE
-summary: IE 9 has a hard limit of 4095 selectors in per stylesheet. Size does not matter here.
+summary: IE 9 has a hard limit of 4095 selectors per stylesheet. Size does not matter here.
 ---
 
 If you search for CSS limitations on IE, you will see sites where they state
