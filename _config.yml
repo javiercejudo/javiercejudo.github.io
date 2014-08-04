@@ -17,16 +17,16 @@ avatar: https://avatars0.githubusercontent.com/u/1095851?v=1&s=70
 
 # Includes an icon in the footer for each username you enter
 footer-links:
-  dribbble:
   email: javier@javiercejudo.com
-  facebook: javier.cejudo
-  flickr:
   github: javiercejudo
-  instagram:
   linkedin: javiercejudo
-  pinterest:
-  rss: # just type anything here for a working RSS icon, make sure you set the "url" above!
   twitter: javiercejudo
+  facebook: javier.cejudo
+  instagram: javier.cejudo
+  rss: feed # just type anything here for a working RSS icon, make sure you set the "url" above!
+  flickr:
+  dribbble:
+  pinterest:
 
 # Your disqus shortname, entering this will enable commenting on posts
 disqus: c3jud0-technotes
