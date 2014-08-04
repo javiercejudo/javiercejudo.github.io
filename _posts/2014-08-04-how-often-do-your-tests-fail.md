@@ -10,7 +10,7 @@ Every now and then [a build will fail][failedbuild] because the expectation for 
 is not met.
 
 In my case, I don't commit all that often, but if you are building your
-code a thousands of times per day, 99% confidence is probably not enough.
+code thousands of times per day, 99% confidence is probably not enough.
 
 Why not have a little script to run them a number of times and see
 what happens? Here is mine:
@@ -23,8 +23,8 @@ notification. If you are not on Ubuntu, you can replace
 don't need to do this often, but if you find your tests failing here and
 there, better measure how often they actually fail.
 
-My test suite takes about ~3 seconds to complete, so I can leave run it
-running few hundred times without wanting to die, but for bigger suites
+My test suite takes about ~3 seconds to complete, so I can leave it
+running a few hundred times without wanting to die, but for bigger suites
 you probably want to avoid nondeterministic tests altogether.
 
 [tests]: https://github.com/javiercejudo/javiercejudo.com/blob/v1.2.7/tests/unit/SecretaryProblemSpec.js#L45-L85
