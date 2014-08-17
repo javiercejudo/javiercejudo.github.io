@@ -5,11 +5,21 @@ layout: default
 <article class="post">
   <h1>{{ page.title }}</h1>
 
-  <div class="entry">
-    {% if page.summary %}
-      TL;DR {{ page.summary }}
+  <div class="date">
+    {% if page.categories %}
+    Classified under
+    {% for category in page.categories %}
+    <a class="category-label" href="{{site.base_url}}/categories/#{{ category }}">
+      {{ category }}</a>
+    {% endfor %}
     {% endif %}
+  </div>
 
+  {% if page.summary %}
+  <p>TL;DR {{ page.summary }}</p>
+  {% endif %}
+
+  <div class="entry">
     {{ content }}
   </div>
 

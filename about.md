@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About
+permalink: /about/
 ---
 
 I’m a Spanish full-stack developer living in Sydney, Australia, with special

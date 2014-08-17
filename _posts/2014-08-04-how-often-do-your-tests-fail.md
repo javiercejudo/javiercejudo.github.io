@@ -2,6 +2,8 @@
 layout: post
 title: How often do your tests fail?
 summary: A bit less often than yes, I have measured it.
+categories:
+  - testing
 ---
 
 I have a [few tests][tests] for an [automatic player][autoplayer] of my
@@ -15,7 +17,31 @@ code thousands of times per day, 99% confidence is probably not enough.
 Why not have a little script to run them a number of times and see
 what happens? Here is mine:
 
-{% gist javiercejudo/59b23a3b3a4cd4a805d9 %}
+{% highlight bash linenos=table %}
+#!/bin/bash
+
+SUCCESS=0;
+COUNT=0;
+ITERATIONS=1;
+
+if [ -n "$1" ]; then
+    let ITERATIONS=$1
+fi
+
+while [ $COUNT -lt $ITERATIONS ]; do
+    let COUNT+=1
+
+    if grunt karma:dev; then
+        let SUCCESS+=1
+    fi
+
+    echo Success rate: $SUCCESS/$COUNT
+done
+
+if hash notify-send 2>/dev/null; then
+    notify-send "JavierCejudo.com test loop" "Success rate: $SUCCESS/$ITERATIONS"
+fi
+{% endhighlight %}
 
 Then I simply use it by running `./test-loop.sh 100` and wait for the
 notification. If you are not on Ubuntu, you can replace

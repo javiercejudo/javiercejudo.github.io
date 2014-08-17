@@ -2,6 +2,10 @@
 layout: post
 title: Microdata for Rich Snippets
 summary: Wrap semantic blocks, use HTML classes for styling and read the manual.
+categories:
+  - frontend
+  - seo
+  - html
 ---
 
 ## The concept
@@ -20,7 +24,35 @@ Help search engines understand the content of a page in a semantic way.
 Pay special attention to the attributes `itemscope`, `itemtype` and `itemprop`,
 and to the `meta` tags:
 
-{% gist javiercejudo/8096733 %}
+{% highlight html linenos=table %}
+<div itemscope itemtype="http://schema.org/Product">
+  <meta itemprop="sku" content="123-sku">
+  <h1 itemprop="name">
+    Product title
+  </h1>
+  <span class="brand-name" itemprop="brand" itemscope
+        itemtype="http://schema.org/Brand">
+    <a itemprop="url" href="/brand-1">
+      <span itemprop="name">Brand name</span>
+    </a>
+  </span>
+  <span class="star-wrap" itemprop="aggregateRating" itemscope
+        itemtype="http://schema.org/AggregateRating">
+    <meta itemprop="bestRating" content="5">
+    <meta itemprop="ratingValue" content="4">
+    <meta  content="2">
+    <span class="fa-icon-star"></span>
+    <span class="fa-icon-star"></span>
+    <span class="fa-icon-star"></span>
+    <span class="fa-icon-star"></span>
+    <span class="fa-icon-star stop"></span>
+    <span>
+      (<span class="rating-num stop" itemprop="reviewCount">2</span>)
+    </span>
+  </span>
+  ...
+</div>
+{% endhighlight %}
 
 The previous syntax describes a structure like the following:
 
@@ -47,7 +79,38 @@ available to be annotated. In other cases, even if the information is readily
 available, the vocabulary requires it to be specified in a certain way. Have a
 look at the following cases:
 
-{% gist javiercejudo/8096996 %}
+{% highlight html linenos=table %}
+<!-- 1. The data is not in the DOM! -->
+
+<meta itemprop="sku" content="123-sku">
+
+<!-- 2. The data cannot be annotated as is! -->
+
+<!--
+The rating of a particular product is represented in the DOM
+by stars that cannot be annotated.
+We need to markup the actual value (★★★★☆ → 4):
+-->
+
+<meta itemprop="bestRating" content="5">
+<meta itemprop="ratingValue" content="4">
+
+<!--
+The date of a review is displayed but it is not
+machine friendly (09/07/2013 → 2013-07-09):
+-->
+
+<span itemprop="datePublished" content="2013-07-09">09/07/2013</span>
+
+<!-- 3. The data needs to be specified in a certain way! -->
+
+<!--
+Stock availability is shown in the DOM as 'In Stock',
+but the vocabulary needs it to be specified as follows
+-->
+
+<link itemprop="availability" href="http://schema.org/InStock" />
+{% endhighlight %}
 
 The documentation is clear about which properties need to be declared as above
 and the options available.
@@ -64,7 +127,17 @@ product page into its own `div`, which of course created a huge diff in Git.
 The same applies to small pieces of information: if you need to display the
 brand of a product and the product name, wrap each one into its own element:
 
-{% gist javiercejudo/8098101 %}
+{% highlight html linenos=table %}
+<!--Suboptimal  -->
+<div class="product-details">
+  Brand name - Product name
+</div>
+
+<!--Better  -->
+<div class="product-details">
+  <span>Brand name</span> - <span>Product name</span>
+</div>
+{% endhighlight %}
 
 ### Apply CSS styles via HTML classes
 

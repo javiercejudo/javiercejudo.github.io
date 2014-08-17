@@ -2,6 +2,8 @@
 layout: post
 title: Thoughts on the status of web development
 summary: It is nice to have free powerful stuff, but let's not forget about the standards.
+categories:
+  - opinion
 ---
 
 Web development is becoming more and more relevant every day, as private

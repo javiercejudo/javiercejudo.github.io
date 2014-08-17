@@ -1,0 +1,49 @@
+---
+layout: default
+permalink: /categories/
+---
+<div class="categories">
+
+  <h1><a href="{{ site.baseurl }}/categories/">Categories</a></h1>
+
+  {% for category in site.categories %}
+  <div id="{{ category[0] }}" class="category-posts-wrapper">
+    <h2 class="category-title">{{ category[0] }}</h2>
+
+    <div class="category-posts">
+
+      {% for post in category[1] %}
+      {% assign author = site.data.authors[post.author] %}
+      <article class="category-post">
+
+        <h3>
+          <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+        </h3>
+
+      </article>
+      {% endfor %}
+
+    </div>
+  </div>
+  {% endfor %}
+
+</div>
+
+<script>
+  (function() {
+    if (!window.location.hash) {
+      return;
+    }
+
+    var
+      hash = window.location.hash.substr(1),
+      titles = document.getElementsByClassName('category-posts-wrapper'),
+      iMax, i;
+
+    for (i = 0, iMax = titles.length; i < iMax; i+=1) {
+      if (titles[i].id !== hash) {
+        titles[i].style.display = 'none';
+      }
+    }
+  })();
+</script>

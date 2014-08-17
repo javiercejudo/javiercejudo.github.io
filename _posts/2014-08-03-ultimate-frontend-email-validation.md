@@ -2,6 +2,9 @@
 layout: post
 title: Your ultimate frontend email validation
 summary: Leverage native APIs, otherwise check only for @ and go grab another beer.
+categories:
+  - frontend
+  - javascript
 ---
 
 It is common practice to validate emails using complex regular expressions,
@@ -12,7 +15,26 @@ Right.
 
 Well, here is my attempt:
 
-{% gist javiercejudo/7630df7e229dec1fb6d6 %}
+{% highlight javascript linenos=table %}
+(function () {
+  'use strict';
+
+  var api = {};
+
+  // element needs to have type="email"
+  api.isValidEmail = function (element) {
+
+    // leverage the Constraint Validation API when it is available
+    if (typeof element.checkValidity === 'function') {
+      return element.checkValidity();
+    }
+
+    // otherwise, this is about the only regex
+    // that doesn't reject any valid email addresses
+    return (/@/).test(element.value);
+  };
+}());
+{% endhighlight %}
 
 Please note that the Constraint Validation API has a
 willful violation of RFC 5322 with the following explanation:
@@ -24,9 +46,9 @@ willful violation of RFC 5322 with the following explanation:
 
 Source: [W3C E-mail state](http://www.w3.org/TR/html5/forms.html#valid-e-mail-address)
 
-That link also provides a regular expression that implements the
+That link also provides a regular `expression` that implements the
 current specification in case you really want to go down that road:
 
-```
-/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
-```
+{% highlight javascript linenos=table %}
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
+{% endhighlight %}
