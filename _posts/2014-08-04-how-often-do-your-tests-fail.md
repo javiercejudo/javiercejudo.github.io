@@ -17,7 +17,7 @@ code thousands of times per day, 99% confidence is probably not enough.
 Why not have a little script to run them a number of times and see
 what happens? Here is mine:
 
-{% highlight bash linenos=table %}
+{% highlight bash %}
 #!/bin/bash
 
 SUCCESS=0;

@@ -24,7 +24,7 @@ Help search engines understand the content of a page in a semantic way.
 Pay special attention to the attributes `itemscope`, `itemtype` and `itemprop`,
 and to the `meta` tags:
 
-{% highlight html linenos=table %}
+{% highlight html %}
 <div itemscope itemtype="http://schema.org/Product">
   <meta itemprop="sku" content="123-sku">
   <h1 itemprop="name">
@@ -79,7 +79,7 @@ available to be annotated. In other cases, even if the information is readily
 available, the vocabulary requires it to be specified in a certain way. Have a
 look at the following cases:
 
-{% highlight html linenos=table %}
+{% highlight html %}
 <!-- 1. The data is not in the DOM! -->
 
 <meta itemprop="sku" content="123-sku">
@@ -127,7 +127,7 @@ product page into its own `div`, which of course created a huge diff in Git.
 The same applies to small pieces of information: if you need to display the
 brand of a product and the product name, wrap each one into its own element:
 
-{% highlight html linenos=table %}
+{% highlight html %}
 <!--Suboptimal  -->
 <div class="product-details">
   Brand name - Product name

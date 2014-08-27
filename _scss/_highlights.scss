@@ -1,32 +1,30 @@
-.highlighttable, p > code {
-  background-color: #eee;
-  border-radius : 4px;
-  font-family: monospace;
+.highlight, p code, li code {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 14px;
+  background-color: #efefef;
   color: #333332;
+  @include rounded(4px);
 }
 
-.highlighttable {
-  margin-bottom: 1.5em;
-  padding: 0 10px;
-  max-width: $site-width;
-  width: 100%;
-
-  .linenodiv {
-    border-right: 1px solid #ddd;
+p, li {
+  code {
+    white-space: nowrap;
+    margin: 0 2px;
+    padding: 0 5px;
+    border: 1px solid #e6e6e6;
   }
 }
 
-.entry > p > code {
-  padding: 3px;
-}
-
-.code > .highlight, .linenos > .linenodiv {
+.highlight {
+  background-color: #efefef;
+  margin-bottom: 1.5em;
   pre {
+    overflow-y: auto;
     position: relative;
     margin: 0;
-    padding: 10px;
+    padding: 1em;
   }
+  .lineno { padding-right: 24px; color: lighten(#333332,50);}
   .hll { background-color: #ffffcc }
   .c { color: #999988; font-style: italic } /* Comment */
   .err { color: #a61717; background-color: #e3d2d2 } /* Error */

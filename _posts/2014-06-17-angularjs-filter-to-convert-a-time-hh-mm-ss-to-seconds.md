@@ -11,7 +11,7 @@ categories:
 The following AngularJS filter converts something in the form of `hh:mm:ss`
 or `mm:ss` to seconds.
 
-{% highlight javascript linenos=table %}
+{% highlight javascript %}
 'use strict';
 
 angular.module('myApp.filters.time', [])
