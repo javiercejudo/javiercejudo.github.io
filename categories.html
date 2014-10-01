@@ -28,22 +28,3 @@ permalink: /categories/
   {% endfor %}
 
 </div>
-
-<script>
-  (function() {
-    if (!window.location.hash) {
-      return;
-    }
-
-    var
-      hash = window.location.hash.substr(1),
-      titles = document.getElementsByClassName('category-posts-wrapper'),
-      iMax, i;
-
-    for (i = 0, iMax = titles.length; i < iMax; i+=1) {
-      if (titles[i].id !== hash) {
-        titles[i].style.display = 'none';
-      }
-    }
-  })();
-</script>
