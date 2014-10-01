@@ -7,7 +7,7 @@ permalink: /categories/
   <h1><a href="{{ site.baseurl }}/categories/">Categories</a></h1>
 
   {% for category in site.categories %}
-  <div id="{{ category[0] }}" class="category-posts-wrapper">
+  <section id="{{ category[0] }}" class="category-posts-wrapper">
     <h2 class="category-title">{{ category[0] }}</h2>
 
     <div class="category-posts">
@@ -24,7 +24,7 @@ permalink: /categories/
       {% endfor %}
 
     </div>
-  </div>
+  </section>
   {% endfor %}
 
 </div>
