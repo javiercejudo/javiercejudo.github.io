@@ -15,24 +15,14 @@ or `mm:ss` to seconds.
 'use strict';
 
 angular.module('myApp.filters.time', [])
-
-  .filter('returnInt', function () {
-    return function (number) {
-      return parseInt(number, 10);
+  .filter('timeToSeconds', function () {
+    return function (time) {
+      return time.split(':')
+        .reverse()
+        .map(Number)
+        .reduce(function (pUnit, cUnit, index) {
+          return pUnit + cUnit * Math.pow(60, index);
+        });
     };
-  })
-
-  .filter('timeToSeconds', [
-    'returnIntFilter',
-    function (returnIntFilter) {
-      return function (time) {
-        return time.split(':')
-          .reverse()
-          .map(returnIntFilter)
-          .reduce(function (pUnit, cUnit, index) {
-            return pUnit + cUnit * Math.pow(60, index);
-          });
-      };
-    }
-  ]);
+  });
 {% endhighlight %}
