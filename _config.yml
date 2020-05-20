@@ -64,7 +64,7 @@ sass:
   style: :compressed # Options (:expanded, :compressed)
 
 # Use the following plug-ins
-gems:
+plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jemoji
